@@ -6,9 +6,9 @@
 
 ![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/7776b279-c7cc-4049-a54b-e1b1a35d61e2)
 
-### Sistema para desenvolvimento para o Curso de Microserviços - DevSuperior.
+### Arquitetura de Microserviços para o Curso DevSuperior. 
 
-![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/22da9c2b-06fe-4e07-8a74-a516b1c1d6b9)
+![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/3b929c37-37af-46c0-8ee5-a99730dfd4f9)
 
 ### Leitura. 
 
