@@ -8,7 +8,7 @@
 
 ### Arquitetura de Microserviços para o Curso DevSuperior. 
 
-![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/3b929c37-37af-46c0-8ee5-a99730dfd4f9)
+![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/1039ea3c-20a2-4319-8ef8-71c254a3b38c)
 
 ### Leitura. 
 
