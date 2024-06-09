@@ -1,6 +1,6 @@
 # Projeto para Curso de Microservice Java com Spring Boot.
 
-* Java 21 | Docker 24.0 | Spring boot 3.3.1
+* Java 21 | Docker 24.0 | Spring boot 3.3.0
 
 ### Modelo conceitual
 
