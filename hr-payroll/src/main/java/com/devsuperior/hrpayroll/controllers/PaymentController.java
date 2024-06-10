@@ -17,12 +17,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-//    @GetMapping(value = "/{workerId}/days/{days}")
-//    public ResponseEntity <Payment> getPayment (@PathVariable Long workerId, @PathVariable Integer days) {
-//        Payment payment = paymentService.getPayment(workerId, days);
-//        return ResponseEntity.ok().body(payment);
-//    }
-
     @GetMapping(value = "/{workerId}/days/{days}")
     public Mono<ResponseEntity<Payment>> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
         return paymentService.getPayment(workerId, days)
