@@ -8,10 +8,10 @@
 *  Eureka Server (Discovery)
 
 ## Fases para implementação 
-1 - Criação dos microserviços e integração através do OpenFeign.
-2 - Criação do server Eureka e Hystrix e Zull
-3-
-4-
+* 1 - Criação dos microserviços e integração através do OpenFeign.
+* 2 - Criação do server Eureka e Hystrix e Zull
+* 3-
+* 4-
 
 ### Modelo conceitual
 
