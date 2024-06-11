@@ -1,7 +1,7 @@
 # Projeto para Curso de Microservice Java com Spring Boot.
 
 * Java 21 | Docker 24.0 | Spring boot 3.3.0
-* WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)| Spring LoaderBalance 3.1.3 (Balanciador de carga) | Eureka Server (Discovery)
+* WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)| Spring LoadBalance 3.1.3 (Balanciador de carga) | Eureka Server (Discovery)
 
 ### Modelo conceitual
 
@@ -22,11 +22,23 @@
 
 ## Open Feign 
 
+Realizar a comunicação entre API´s 
 
+```js
+@Component
+@FeignClient(name = "hr-worker",
+        path = "/workers")
+public interface WorkerFeignClient {
 
-## Spring Cloud LoaderBalance 
+    @GetMapping(value = "/{id}")
+    ResponseEntity<Worker> findById(@PathVariable Long id);
 
+}
+```
 
+## Spring Cloud LoadBalance 
+
+O spring-cloud-starter-loadbalancer é uma biblioteca do Spring Cloud que fornece funcionalidades para realizar balanceamento de carga de forma programática. Ele oferece uma maneira fácil de integrar balanceamento de carga em aplicativos Spring que precisam se comunicar com serviços distribuídos
 
 ## Eureka Server 
 
