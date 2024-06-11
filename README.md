@@ -7,6 +7,12 @@
 *  Spring LoadBalance 3.1.3 (Balanciador de carga) |
 *  Eureka Server (Discovery)
 
+Fases para implementação 
+1 - Criação dos microserviços e integração através do OpenFeign.
+2 - Criação do server Eureka e Hystrix e Zull
+3-
+4-
+
 ### Modelo conceitual
 
 ![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/7776b279-c7cc-4049-a54b-e1b1a35d61e2)
