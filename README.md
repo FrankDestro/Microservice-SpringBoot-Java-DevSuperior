@@ -19,6 +19,3 @@
 
 * https://medium.com/introducao-a-arquitetura-de-microservicos/introdu%C3%A7%C3%A3o-a-microsservi%C3%A7os-25378269e6f9
 
-
-
-
