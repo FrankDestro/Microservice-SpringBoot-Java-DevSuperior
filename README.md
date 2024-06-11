@@ -1,7 +1,7 @@
 # Projeto para Curso de Microservice Java com Spring Boot.
 
 * Java 21 | Docker 24.0 | Spring boot 3.3.0
-* Comunicação APIs -  WebClient | RestTemplate | OpenFeign
+* Comunicação APIs -  WebClient | RestTemplate | OpenFeign 3.1.3
 
 ### Modelo conceitual
 
@@ -18,5 +18,4 @@
 * https://martinfowler.com/articles/microservices.html
 
 * https://medium.com/introducao-a-arquitetura-de-microservicos/introdu%C3%A7%C3%A3o-a-microsservi%C3%A7os-25378269e6f9
-
 
