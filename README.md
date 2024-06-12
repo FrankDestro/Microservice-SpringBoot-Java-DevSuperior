@@ -5,7 +5,13 @@
 *  Spring boot 3.3.0
 *  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)|
 *  Spring LoadBalance 3.1.3 (Balanciador de carga) |
-*  Eureka Server (Discovery)
+*  Eureka Server (Discovery) 4.1.2
+
+## Fases para implementação 
+* 1 - Criação dos microserviços e integração através do OpenFeign.
+* 2 - Criação do server Eureka e Hystrix e Zull
+* 3-
+* 4-
 
 ### Modelo conceitual
 
