@@ -18,8 +18,6 @@ import java.util.List;
 @RequestMapping(value = "/workers")
 public class WorkerController {
 
-    private static Logger logger = LoggerFactory.getLogger(WorkerController.class);
-
     @Autowired
     private Environment env;
 
@@ -35,9 +33,6 @@ public class WorkerController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<WorkerDTO> findById(@PathVariable Long id) {
-
-        logger.info("PORT = {}", env.getProperty("local.server.port"));
-
         WorkerDTO dto = workerService.findById(id);
         return ResponseEntity.ok().body(dto);
     }
