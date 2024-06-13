@@ -1,16 +1,19 @@
 # Projeto para Curso de Microservice Java com Spring Boot.
 
-* Java 21 |
-*  Docker 24.0 |
+* Java 21 
+*  Docker 24.0 
 *  Spring boot 3.3.0
-*  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)|
-*  Spring LoadBalance 3.1.3 (Balanciador de carga) |
+*  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)
+*  Spring LoadBalance 3.1.3 (Balanciador de carga) 
 *  Eureka Server (Discovery) 4.1.2
+*  CircuitBreaker - resilience4j
+*  sfj4j - spring
+*  Spring Cloug Gateway 4.1.2
 
 ## Fases para implementação 
 * 1 - Criação dos microserviços e integração através do OpenFeign.
 * 2 - Criação do server Eureka e Hystrix e Zull
-* 3-
+* 3- 
 * 4-
 
 ### Modelo conceitual
@@ -59,3 +62,8 @@ O Eureka Server é uma parte fundamental da arquitetura de microservices, especi
 O Eureka Server permite que os serviços se registrem nele, informando seu nome e endereço de rede. Assim, outros serviços podem consultar o Eureka Server para descobrir onde um serviço específico está localizado. Isso é especialmente útil em ambientes em nuvem, onde os serviços podem ser escalados dinamicamente e podem ser movidos entre diferentes máquinas ou instâncias.
 
 Em resumo, o Eureka Server fornece um registro centralizado de todos os serviços disponíveis na arquitetura de microservices e permite que outros serviços encontrem e se comuniquem com esses serviços de forma dinâmica e eficiente.
+
+## CircuitBreaker by resiliense4j. 
+
+
+## Spring cloud Gateway
