@@ -1,14 +1,14 @@
 # Projeto para Curso de Microservice Java com Spring Boot.
 
-* Java 21 |
-*  Docker 24.0 |
+* Java 21 
+*  Docker 24.0 
 *  Spring boot 3.3.0
-*  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)|
-*  Spring LoadBalance 3.1.3 (Balanciador de carga) |
+*  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)
+*  Spring LoadBalance 3.1.3 (Balanciador de carga) 
 *  Eureka Server (Discovery) 4.1.2
 *  CircuitBreaker - resilience4j
 *  sfj4j - spring
-*  Spring Cloug Gateway 
+*  Spring Cloug Gateway 4.1.2
 
 ## Fases para implementação 
 * 1 - Criação dos microserviços e integração através do OpenFeign.
