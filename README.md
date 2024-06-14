@@ -67,3 +67,8 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 
 
 ## Spring cloud Gateway
+
+
+## Servidor de configuração centralizada. 
+
+Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
