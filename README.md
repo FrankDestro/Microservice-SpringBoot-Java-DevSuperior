@@ -12,8 +12,8 @@
 
 ## Fases para implementação 
 * 1 - Criação dos microserviços e integração através do OpenFeign.
-* 2 - Criação do server Eureka e Hystrix e Zull
-* 3- 
+* 2 - Criação do server Eureka, implementação do Resiliense4j para tolerância a falhas e SPring Cloud API Gateway
+* 3- Implementação de um server-config 
 * 4-
 
 ### Modelo conceitual
