@@ -72,3 +72,7 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 ## Servidor de configuração centralizada. 
 
 Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
+
+#### repositório git com as configurações 
+https://github.com/FrankDestro/microservices-config
+
