@@ -6,3 +6,16 @@ spring:
       uri: http://localhost:8888
   profiles:
     active: test
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
+  endpoint:
+    refresh:
+      enabled: true
+
+logging:
+  level:
+    org.springframework.web: DEBUG

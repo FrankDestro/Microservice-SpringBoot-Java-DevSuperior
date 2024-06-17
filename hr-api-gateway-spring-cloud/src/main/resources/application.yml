@@ -20,8 +20,8 @@ spring:
           enabled: true
           lower-case-service-id: true
       httpclient:
-        connect-timeout: 1000
-        response-timeout: 2000
+        connect-timeout: 5000
+        response-timeout: 8000
       routes:
         - id: test-service-route
           uri: lb://test-service
@@ -43,3 +43,8 @@ management:
       enabled: true
     env:
       enabled: true
+    spring:
+      output:
+        ansi:
+          enabled: ALWAYS
+
