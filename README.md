@@ -73,8 +73,11 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 
 Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
 
-## Autenticação e Autorização 
-
 #### repositório git com as configurações 
 https://github.com/FrankDestro/microservices-config
+
+## Autenticação e Autorização 
+
+![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/d578932f-63e8-4f79-bbb9-91b50bbf5122)
+
 
