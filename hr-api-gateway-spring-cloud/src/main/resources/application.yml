@@ -27,6 +27,9 @@ spring:
           uri: lb://test-service
           predicates:
             - Path=/test/**
+      output:
+        ansi:
+          enabled: ALWAYS
 
 management:
   endpoint:
@@ -43,8 +46,5 @@ management:
       enabled: true
     env:
       enabled: true
-    spring:
-      output:
-        ansi:
-          enabled: ALWAYS
+
 

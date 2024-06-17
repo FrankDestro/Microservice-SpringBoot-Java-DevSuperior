@@ -3,7 +3,6 @@ package com.devsuperior.hrpayroll.services;
 import com.devsuperior.hrpayroll.integration.WorkerFeignClient;
 import com.devsuperior.hrpayroll.models.entities.Payment;
 import com.devsuperior.hrpayroll.models.entities.Worker;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
