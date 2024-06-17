@@ -11,10 +11,10 @@
 *  Spring Cloug Gateway 4.1.2
 
 ## Fases para implementação 
-* 1 - Criação dos microserviços e integração através do OpenFeign.
-* 2 - Criação do server Eureka, implementação do Resiliense4j para tolerância a falhas e SPring Cloud API Gateway
+* 1- Criação dos microserviços e integração através do OpenFeign.
+* 2- Criação do server Eureka, implementação do Resiliense4j para tolerância a falhas e SPring Cloud API Gateway
 * 3- Implementação de um server-config 
-* 4-
+* 4- Autenticação e Autorização - OAuth2
 
 ### Modelo conceitual
 
@@ -72,6 +72,8 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 ## Servidor de configuração centralizada. 
 
 Quando um microsserviço é levantado, antes de se registrar no Eureka, ele busca as configurações no repositório central de configurações.
+
+## Autenticação e Autorização 
 
 #### repositório git com as configurações 
 https://github.com/FrankDestro/microservices-config
