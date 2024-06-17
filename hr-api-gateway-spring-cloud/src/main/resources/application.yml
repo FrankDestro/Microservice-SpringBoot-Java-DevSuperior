@@ -11,6 +11,9 @@ eureka:
 spring:
   application:
     name: hr-api-gateway-spring-cloud
+    output:
+      ansi:
+        enabled: ALWAYS
   main:
     web-application-type: reactive
   cloud:
@@ -27,10 +30,6 @@ spring:
           uri: lb://test-service
           predicates:
             - Path=/test/**
-      output:
-        ansi:
-          enabled: ALWAYS
-
 management:
   endpoint:
     health:
