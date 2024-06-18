@@ -16,6 +16,7 @@ public class UserDTO {
     private Long id;
     private String name;
     private String email;
+    private String password;
 
     private List<RoleDTO> roles = new ArrayList<>();
 
@@ -23,6 +24,7 @@ public class UserDTO {
         id = user.getId();
         name = user.getName();
         email = user.getEmail();
+        password = user.getPassword();
         user.getRoles().forEach(roles -> this.roles.add(new RoleDTO(roles)));
     }
 }
