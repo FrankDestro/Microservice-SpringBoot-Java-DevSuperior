@@ -3,6 +3,7 @@ package com.devsuperior.hr_oauth.config;
 import com.devsuperior.hr_oauth.security.CustomPasswordAuthenticationConverter;
 import com.devsuperior.hr_oauth.security.CustomPasswordAuthenticationProvider;
 import com.devsuperior.hr_oauth.security.CustomUserAuthorities;
+import com.devsuperior.hr_oauth.services.RedisService;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.JWKSource;
@@ -63,6 +64,9 @@ public class AuthorizationServerConfig {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
+	@Autowired
+	RedisService redisService;
+
 	@Bean
 	@Order(1)
 	public SecurityFilterChain webFilterChainForOAuth(HttpSecurity http) throws Exception {
@@ -82,14 +86,14 @@ public class AuthorizationServerConfig {
 		return http.build();
 	}
 
-	@Bean
-	@Order(2)
-	public SecurityFilterChain appSecurity(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeHttpRequests((request) -> request.anyRequest().authenticated())
-				.formLogin(Customizer.withDefaults());
-
-		return httpSecurity.build();
-	}
+//	@Bean
+//	@Order(2)
+//	public SecurityFilterChain appSecurity(HttpSecurity httpSecurity) throws Exception {
+//		httpSecurity
+//				.authorizeHttpRequests((request) -> request.anyRequest().authenticated())
+//				.formLogin(Customizer.withDefaults());
+//		return httpSecurity.build();
+//	}
 
 	@Bean
 	public OAuth2AuthorizationService authorizationService() {
@@ -172,6 +176,10 @@ public class AuthorizationServerConfig {
 	@Bean
 	public JWKSource<SecurityContext> jwkSource() {
 		RSAKey rsaKey = generateRsa();
+
+		// Salvando chave pública no Redis.
+		redisService.storePublicKey("keyPublic", rsaKey.toPublicJWK().toJSONObject().toString());
+
 		JWKSet jwkSet = new JWKSet(rsaKey);
 		return (jwkSelector, securityContext) -> jwkSelector.select(jwkSet);
 	}
