@@ -86,15 +86,6 @@ public class AuthorizationServerConfig {
 		return http.build();
 	}
 
-//	@Bean
-//	@Order(2)
-//	public SecurityFilterChain appSecurity(HttpSecurity httpSecurity) throws Exception {
-//		httpSecurity
-//				.authorizeHttpRequests((request) -> request.anyRequest().authenticated())
-//				.formLogin(Customizer.withDefaults());
-//		return httpSecurity.build();
-//	}
-
 	@Bean
 	public OAuth2AuthorizationService authorizationService() {
 		return new InMemoryOAuth2AuthorizationService();

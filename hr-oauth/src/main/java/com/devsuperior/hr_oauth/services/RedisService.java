@@ -1,7 +1,6 @@
 package com.devsuperior.hr_oauth.services;
 
 import com.devsuperior.hr_oauth.models.entities.PublicKeyDTO;
-import com.devsuperior.hr_oauth.models.entities.PublicKeyResponse;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
