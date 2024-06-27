@@ -9,12 +9,22 @@ spring:
 
 management:
   endpoints:
+    enabled-by-default: false
     web:
       exposure:
-        include: refresh, health, info
+        include: refresh, health, info, metrics, prometheus
   endpoint:
     refresh:
       enabled: true
+    health:
+      enabled: true
+      show-details : always
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    prometheus:
+      enabled : true
 
 logging:
   level:

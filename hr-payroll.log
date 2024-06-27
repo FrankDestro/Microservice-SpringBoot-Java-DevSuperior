@@ -1,84 +1,52 @@
-2024-06-25T01:47:42.970-03:00  INFO 5190 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Starting HrPayrollApplication using Java 21.0.3 with PID 5190 (/home/frank/IdeaProjects/Microservice-SpringBoot-Java/hr-payroll/target/classes started by frank in /home/frank/IdeaProjects/Microservice-SpringBoot-Java)
-2024-06-25T01:47:43.060-03:00  INFO 5190 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-06-25T01:47:46.296-03:00  INFO 5190 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=957d2147-4f1d-3cc7-aa55-f847d90ee0e0
-2024-06-25T01:47:47.051-03:00  WARN 5190 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T01:47:47.068-03:00  WARN 5190 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T01:47:47.097-03:00  WARN 5190 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T01:47:47.115-03:00  WARN 5190 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T01:47:47.123-03:00  WARN 5190 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T01:47:48.103-03:00  INFO 5190 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-06-25T01:47:48.134-03:00  INFO 5190 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-25T01:47:48.134-03:00  INFO 5190 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-25T01:47:48.316-03:00  INFO 5190 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-25T01:47:48.317-03:00  INFO 5190 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4971 ms
-2024-06-25T01:47:49.428-03:00  INFO 5190 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
-2024-06-25T01:47:52.950-03:00  INFO 5190 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2024-06-25T01:47:53.164-03:00  WARN 5190 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-06-25T01:47:53.305-03:00  INFO 5190 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 43369 (http) with context path '/'
-2024-06-25T01:47:53.308-03:00  INFO 5190 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 43369
-2024-06-25T01:47:53.320-03:00  INFO 5190 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2024-06-25T01:47:53.627-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2024-06-25T01:47:53.636-03:00  INFO 5190 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T01:47:53.695-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2024-06-25T01:47:53.696-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T01:47:54.682-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T01:47:54.691-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2024-06-25T01:47:54.701-03:00  INFO 5190 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2024-06-25T01:47:54.718-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1719290874715 with initial instances count: 0
-2024-06-25T01:47:54.746-03:00  INFO 5190 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
-2024-06-25T01:47:54.748-03:00  INFO 5190 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719290874748, current=UP, previous=STARTING]
-2024-06-25T01:47:54.751-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd: registering service...
-2024-06-25T01:47:54.821-03:00  INFO 5190 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 14.319 seconds (process running for 16.693)
-2024-06-25T01:47:54.940-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd - registration status: 204
-2024-06-25T01:48:24.690-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T01:48:24.690-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T01:48:24.690-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T01:48:24.691-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T01:48:24.691-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T01:48:24.691-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2024-06-25T01:48:24.691-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T01:48:24.717-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T01:52:53.700-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T01:57:53.701-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:02:53.702-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:07:53.703-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:12:53.704-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:17:53.705-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:22:53.706-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T02:27:53.707-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T12:33:23.008-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T12:38:23.009-03:00  INFO 5190 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T12:41:54.933-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
-2024-06-25T12:41:54.934-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719330114934, current=DOWN, previous=UP]
-2024-06-25T12:41:54.934-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd: registering service...
-2024-06-25T12:41:54.960-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-06-27T00:03:50.413-03:00  INFO 7206 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T00:08:50.436-03:00  INFO 7206 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T00:13:50.437-03:00  INFO 7206 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T00:18:50.437-03:00  INFO 7206 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T00:19:56.896-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
+2024-06-27T00:19:56.897-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719458396897, current=DOWN, previous=UP]
+2024-06-27T00:19:56.897-03:00  INFO 7206 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c: registering service...
+2024-06-27T00:19:56.914-03:00  INFO 7206 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c - registration status: 204
+2024-06-27T00:19:57.089-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-06-27T00:20:00.092-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-06-27T00:20:00.110-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
@@ -119,115 +87,10 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
-	... 21 more
+	... 37 more
 
-2024-06-25T12:41:54.961-03:00  WARN 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-06-25T12:41:54.978-03:00  INFO 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:757)
-	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
-	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
-	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
-	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
-	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
-	... 22 more
-
-2024-06-25T12:41:54.978-03:00  WARN 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-06-25T12:41:54.982-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2024-06-25T12:41:54.979-03:00  WARN 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-06-25T12:41:54.985-03:00  WARN 5190 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-06-25T12:41:54.987-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2024-06-25T12:41:54.996-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-06-27T00:20:00.110-03:00  WARN 7206 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-06-27T00:20:00.114-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
@@ -309,8 +172,8 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
 	... 38 more
 
-2024-06-25T12:41:54.997-03:00  WARN 5190 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-06-25T12:41:54.997-03:00 ERROR 5190 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:04b5d060e3d3f4068e76a1546596a7cd - de-registration failedCannot execute request on any known server
+2024-06-27T00:20:00.114-03:00  WARN 7206 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-06-27T00:20:00.114-03:00 ERROR 7206 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:662891a3451f92f259f28b8fea69b40c - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
@@ -344,153 +207,104 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.0.jar:3.3.0]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2024-06-25T12:41:55.005-03:00  INFO 5190 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2024-06-25T12:49:43.895-03:00  INFO 5895 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Starting HrPayrollApplication using Java 21.0.3 with PID 5895 (/home/frank/IdeaProjects/Microservice-SpringBoot-Java/hr-payroll/target/classes started by frank in /home/frank/IdeaProjects/Microservice-SpringBoot-Java)
-2024-06-25T12:49:43.905-03:00  INFO 5895 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-06-25T12:49:46.986-03:00  INFO 5895 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=957d2147-4f1d-3cc7-aa55-f847d90ee0e0
-2024-06-25T12:49:47.556-03:00  WARN 5895 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T12:49:47.574-03:00  WARN 5895 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T12:49:47.606-03:00  WARN 5895 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T12:49:47.615-03:00  WARN 5895 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T12:49:47.622-03:00  WARN 5895 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T12:49:48.597-03:00  INFO 5895 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-06-25T12:49:48.622-03:00  INFO 5895 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-25T12:49:48.622-03:00  INFO 5895 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-25T12:49:48.769-03:00  INFO 5895 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-25T12:49:48.770-03:00  INFO 5895 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4698 ms
-2024-06-25T12:49:49.781-03:00  INFO 5895 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
-2024-06-25T12:49:53.387-03:00  INFO 5895 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2024-06-25T12:49:53.559-03:00  WARN 5895 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-06-25T12:49:53.650-03:00  INFO 5895 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 44651 (http) with context path '/'
-2024-06-25T12:49:53.652-03:00  INFO 5895 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 44651
-2024-06-25T12:49:53.666-03:00  INFO 5895 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2024-06-25T12:49:54.034-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2024-06-25T12:49:54.049-03:00  INFO 5895 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T12:49:54.128-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2024-06-25T12:49:54.129-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T12:49:56.118-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T12:49:56.126-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2024-06-25T12:49:56.132-03:00  INFO 5895 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2024-06-25T12:49:56.161-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1719330596156 with initial instances count: 0
-2024-06-25T12:49:56.182-03:00  INFO 5895 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
-2024-06-25T12:49:56.184-03:00  INFO 5895 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719330596184, current=UP, previous=STARTING]
-2024-06-25T12:49:56.191-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f: registering service...
-2024-06-25T12:49:56.333-03:00  INFO 5895 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 14.151 seconds (process running for 15.979)
-2024-06-25T12:49:56.732-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f - registration status: 204
-2024-06-25T12:50:26.127-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T12:50:26.127-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T12:50:26.127-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T12:50:26.127-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T12:50:26.128-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T12:50:26.128-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2024-06-25T12:50:26.128-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T12:50:26.170-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T12:54:54.133-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T12:59:54.134-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:04:54.135-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:09:54.136-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:14:54.137-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:19:54.138-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:24:54.139-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:29:54.140-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:34:54.141-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:39:54.142-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:44:54.143-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:49:54.144-03:00  INFO 5895 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T13:53:28.342-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
-2024-06-25T13:53:28.344-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719334408344, current=DOWN, previous=UP]
-2024-06-25T13:53:28.347-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f: registering service...
-2024-06-25T13:53:28.441-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond
+2024-06-27T00:20:00.121-03:00  INFO 7206 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-06-27T15:11:48.425-03:00  INFO 7220 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Starting HrPayrollApplication using Java 21.0.3 with PID 7220 (/home/frank/IdeaProjects/Microservice-SpringBoot-Java/hr-payroll/target/classes started by frank in /home/frank/IdeaProjects/Microservice-SpringBoot-Java)
+2024-06-27T15:11:48.437-03:00  INFO 7220 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-06-27T15:11:52.779-03:00  INFO 7220 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=5d1a0d6c-8b28-30be-ad66-bee6284ef612
+2024-06-27T15:11:54.039-03:00  WARN 7220 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-27T15:11:54.067-03:00  WARN 7220 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-06-27T15:11:54.098-03:00  WARN 7220 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-27T15:11:54.109-03:00  WARN 7220 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-06-27T15:11:54.118-03:00  WARN 7220 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-06-27T15:11:55.401-03:00  INFO 7220 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-06-27T15:11:55.434-03:00  INFO 7220 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-27T15:11:55.436-03:00  INFO 7220 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-27T15:11:55.610-03:00  INFO 7220 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-27T15:11:55.611-03:00  INFO 7220 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6929 ms
+2024-06-27T15:11:58.063-03:00  INFO 7220 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
+2024-06-27T15:12:03.736-03:00  INFO 7220 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-06-27T15:12:03.936-03:00  WARN 7220 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-06-27T15:12:04.062-03:00  INFO 7220 --- [hr-payroll] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2024-06-27T15:12:04.286-03:00  INFO 7220 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 39481 (http) with context path '/'
+2024-06-27T15:12:04.289-03:00  INFO 7220 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 39481
+2024-06-27T15:12:04.313-03:00  INFO 7220 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-06-27T15:12:04.683-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-06-27T15:12:04.703-03:00  INFO 7220 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:12:04.811-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-06-27T15:12:04.817-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-06-27T15:12:04.817-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-06-27T15:12:04.817-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-06-27T15:12:04.818-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-06-27T15:12:04.818-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-06-27T15:12:04.818-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-06-27T15:12:06.165-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-06-27T15:12:06.174-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-06-27T15:12:06.185-03:00  INFO 7220 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-06-27T15:12:06.201-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1719511926198 with initial instances count: 1
+2024-06-27T15:12:06.229-03:00  INFO 7220 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
+2024-06-27T15:12:06.230-03:00  INFO 7220 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719511926230, current=UP, previous=STARTING]
+2024-06-27T15:12:06.237-03:00  INFO 7220 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80: registering service...
+2024-06-27T15:12:06.327-03:00  INFO 7220 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 20.101 seconds (process running for 22.662)
+2024-06-27T15:12:06.422-03:00  INFO 7220 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80 - registration status: 204
+2024-06-27T15:17:04.826-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:22:04.828-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:27:04.830-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:32:04.831-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:37:04.834-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:42:04.835-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:47:04.836-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:52:04.836-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T15:57:04.837-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T16:02:04.838-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T16:07:04.839-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T16:12:04.843-03:00  INFO 7220 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T16:13:09.646-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
+2024-06-27T16:13:09.646-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719515589646, current=DOWN, previous=UP]
+2024-06-27T16:13:09.653-03:00  INFO 7220 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80: registering service...
+2024-06-27T16:13:09.704-03:00  INFO 7220 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80 - registration status: 204
+2024-06-27T16:13:09.729-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-06-27T16:13:12.731-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-06-27T16:13:12.740-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.cancel(RestTemplateEurekaHttpClient.java:87)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:916)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:892)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:415)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:239)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:202)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:195)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:389)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.apache.hc.core5.http.NoHttpResponseException: localhost:8761 failed to respond
-	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:301)
-	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:175)
-	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:218)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:717)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:216)
-	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:116)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:188)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:116)
-	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
-	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
-	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
-	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
-	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:99)
-	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
-	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
-	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
-	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
-	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
-	... 21 more
-
-2024-06-25T13:53:28.448-03:00  WARN 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond
-2024-06-25T13:53:28.506-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2024-06-25T13:53:28.528-03:00  INFO 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
-	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
-	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
-	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
@@ -529,47 +343,10 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
-	... 22 more
+	... 37 more
 
-2024-06-25T13:53:28.530-03:00  WARN 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-06-25T13:53:28.531-03:00  WARN 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f - registration failed Cannot execute request on any known server
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-06-25T13:53:28.536-03:00  WARN 5895 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
-
-com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
-	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar:2.0.2]
-	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar:2.0.2]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
-
-2024-06-25T13:53:28.543-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2024-06-25T13:53:28.560-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-06-27T16:13:12.741-03:00  WARN 7220 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
+2024-06-27T16:13:12.744-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
@@ -610,7 +387,7 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
@@ -651,8 +428,8 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
 	... 38 more
 
-2024-06-25T13:53:28.561-03:00  WARN 5895 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-06-25T13:53:28.563-03:00 ERROR 5895 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:dd75a407dc718ba05e10c5cee9f2a34f - de-registration failedCannot execute request on any known server
+2024-06-27T16:13:12.744-03:00  WARN 7220 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80": Connect to http://localhost:8761 [localhost/127.0.0.1] failed: Conexão recusada
+2024-06-27T16:13:12.744-03:00 ERROR 7220 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:b5ed13a72e86be5d5dcff9cc7cdefc80 - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
@@ -686,87 +463,4 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.0.jar:3.3.0]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2024-06-25T13:53:28.575-03:00  INFO 5895 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2024-06-25T14:00:42.068-03:00  INFO 5103 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Starting HrPayrollApplication using Java 21.0.3 with PID 5103 (/home/frank/IdeaProjects/Microservice-SpringBoot-Java/hr-payroll/target/classes started by frank in /home/frank/IdeaProjects/Microservice-SpringBoot-Java)
-2024-06-25T14:00:42.083-03:00  INFO 5103 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-06-25T14:00:46.633-03:00  INFO 5103 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=957d2147-4f1d-3cc7-aa55-f847d90ee0e0
-2024-06-25T14:00:47.602-03:00  WARN 5103 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T14:00:47.635-03:00  WARN 5103 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T14:00:47.668-03:00  WARN 5103 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-06-25T14:00:47.677-03:00  WARN 5103 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T14:00:47.683-03:00  WARN 5103 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-06-25T14:00:48.753-03:00  INFO 5103 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-06-25T14:00:48.803-03:00  INFO 5103 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-25T14:00:48.804-03:00  INFO 5103 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-25T14:00:48.921-03:00  INFO 5103 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-25T14:00:48.922-03:00  INFO 5103 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6520 ms
-2024-06-25T14:00:49.999-03:00  INFO 5103 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
-2024-06-25T14:00:54.084-03:00  INFO 5103 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2024-06-25T14:00:54.249-03:00  WARN 5103 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-06-25T14:00:54.419-03:00  INFO 5103 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 35273 (http) with context path '/'
-2024-06-25T14:00:54.422-03:00  INFO 5103 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 35273
-2024-06-25T14:00:54.436-03:00  INFO 5103 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2024-06-25T14:00:54.771-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2024-06-25T14:00:54.783-03:00  INFO 5103 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:00:54.838-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2024-06-25T14:00:54.839-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T14:00:55.882-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T14:00:55.889-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2024-06-25T14:00:55.895-03:00  INFO 5103 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2024-06-25T14:00:55.912-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1719334855908 with initial instances count: 0
-2024-06-25T14:00:55.967-03:00  INFO 5103 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
-2024-06-25T14:00:55.969-03:00  INFO 5103 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1719334855969, current=UP, previous=STARTING]
-2024-06-25T14:00:55.973-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:c62ac20abc7b4fefdacc6e5f21a35630: registering service...
-2024-06-25T14:00:56.022-03:00  INFO 5103 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 16.061 seconds (process running for 17.841)
-2024-06-25T14:00:56.099-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:c62ac20abc7b4fefdacc6e5f21a35630 - registration status: 204
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
-2024-06-25T14:01:25.888-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-06-25T14:01:25.914-03:00  INFO 5103 --- [hr-payroll] [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-06-25T14:05:54.845-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:10:54.846-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:15:54.847-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:20:54.849-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:25:54.850-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:30:54.850-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:35:54.851-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T14:40:54.855-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:13:36.973-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:18:36.974-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:23:36.975-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:28:36.976-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:33:36.979-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:38:36.980-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:43:36.981-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:48:36.982-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:53:36.983-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T15:58:36.984-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:03:36.985-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:08:36.985-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:13:36.987-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:19:38.539-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:24:38.540-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:29:38.541-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:34:38.542-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:39:38.543-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:44:38.543-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:49:38.544-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:54:38.545-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T16:59:38.546-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:04:38.547-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:09:38.548-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:14:38.548-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:19:38.549-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:24:38.550-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:29:38.551-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:34:38.552-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-06-25T17:39:38.553-03:00  INFO 5103 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-06-27T16:13:12.751-03:00  INFO 7220 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

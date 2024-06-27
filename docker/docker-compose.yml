@@ -1,0 +1,45 @@
+version: '3.9'
+
+networks:
+  hr-microservice_observability_network:
+    driver: bridge
+  hr-microservice_app_network:
+    driver: bridge
+
+services:
+  prometheus-hr-microservice:
+    image: prom/prometheus:latest
+    container_name: prometheus-hr-microservice
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+    volumes:
+      - /home/frank/IdeaProjects/Microservice-SpringBoot-Java/docker/observability/prometheus/prometheus.yml
+      - /data/prometheus/
+    ports:
+      - "9091:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/data/prometheus/'
+      - '--web.enable-lifecycle'
+    user: root
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-hr-microservice
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus-hr-microservice
+
+volumes:
+  grafana-storage:

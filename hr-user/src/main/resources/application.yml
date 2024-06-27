@@ -20,3 +20,12 @@ spring:
     output:
         ansi:
             enabled: ALWAYS
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: refresh, health, info
+    endpoint:
+        refresh:
+            enabled: true
