@@ -5,6 +5,8 @@ networks:
     driver: bridge
   hr-microservice_app_network:
     driver: bridge
+  elastic:
+    driver: bridge
 
 services:
   prometheus-hr-microservice:
@@ -14,15 +16,22 @@ services:
       - hr-microservice_observability_network
       - hr-microservice_app_network
     volumes:
-      - /home/frank/IdeaProjects/Microservice-SpringBoot-Java/docker/observability/prometheus/prometheus.yml
-      - /data/prometheus/
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus:/prometheus
     ports:
       - "9091:9090"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/data/prometheus/'
+      - '--storage.tsdb.path=/prometheus'
       - '--web.enable-lifecycle'
     user: root
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: redis-cache
+    ports:
+      - "6379:6379"
     restart: unless-stopped
 
   grafana:
@@ -43,3 +52,7 @@ services:
 
 volumes:
   grafana-storage:
+
+
+
+

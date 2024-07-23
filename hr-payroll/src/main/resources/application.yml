@@ -4,13 +4,7 @@ eureka:
             defaultZone: http://localhost:8761/eureka
     instance:
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-logging:
-    file:
-        name: hr-payroll.log
-    level:
-        root: info
-    pattern:
-        console: '%d{yyy-MM HH:mm} ==  %logger{40} >>> %msg%n'
+
 resilience4j:
     circuitbreaker:
         instances:
@@ -34,3 +28,13 @@ management:
     endpoint:
         refresh:
             enabled: true
+logging:
+    file:
+        name: hr-payroll.log
+    level:
+        root: info
+    pattern:
+        console: '%d{yyyy-MM HH:mm} ==  %logger{40} >>> %msg%n'
+logstash:
+    host: localhost
+    port: 5000
