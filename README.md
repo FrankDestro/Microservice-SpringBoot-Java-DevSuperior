@@ -4,11 +4,12 @@
 *  Docker 24.0 
 *  Spring boot 3.3.0
 *  WebClient | RestTemplate | OpenFeign 3.1.3 (Comnunicação APIs)
-*  Spring LoadBalance 3.1.3 (Balanciador de carga) 
+*  Spring LoaderBalance 3.1.3 (Balanciador de carga) 
 *  Eureka Server (Discovery) 4.1.2
 *  CircuitBreaker - resilience4j
-*  sfj4j - spring
+*  sfj4j - Log 
 *  Spring Cloug Gateway 4.1.2
+*  Observability (Prometheus / Grafana)
 
 ## Fases para implementação 
 * 1- Criação dos microserviços e integração através do OpenFeign.
@@ -22,7 +23,7 @@
 
 ### Arquitetura de Microserviços para o Curso DevSuperior. 
 
-![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/1039ea3c-20a2-4319-8ef8-71c254a3b38c)
+![image](https://github.com/FrankDestro/Imagens-Readme/blob/main/microservice.jpg)
 
 ### Leitura. 
 
