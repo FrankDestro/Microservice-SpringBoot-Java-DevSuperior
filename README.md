@@ -23,7 +23,7 @@
 
 ### Arquitetura de Microserviços para o Curso DevSuperior. 
 
-![image](https://github.com/FrankDestro/Imagens-Readme/blob/main/microservice.jpg)
+![microservice-arquitetura](https://github.com/FrankDestro/Imagens-Readme/blob/main/microservice_devsuperior.drawio.png)
 
 ### Microservices 
 * Eureka discovery - localhost:8761
