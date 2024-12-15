@@ -25,6 +25,33 @@
 
 ![image](https://github.com/FrankDestro/Imagens-Readme/blob/main/microservice.jpg)
 
+### Microservices 
+* Eureka discovery - localhost:8761
+* api-gateway-spring-cloud - localhost:9090
+* hr-oauth - localhost:8083
+* hr-payroll - localhost:random port
+* hr-user - localhost:random port
+* hr-worker - localhost:random port
+* hr-email - localhost: random port
+
+### Container
+* kafka - localhost:9092 internal , external localhost:9093
+* zookeeper - localhost:2181
+* kafka-ui - localhost:8080
+* redis - localhost:6379
+* redis insight - localhost:5540
+* prometheus - localhost:9091
+* grafana- localhost:3000
+
+
+
+
+
+
+
+
+
+
 ### Leitura. 
 
 ### Microservices - a definition of this new architectural term. 
