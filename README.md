@@ -85,8 +85,6 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 
 ## CircuitBreaker by resiliense4j. 
 
-## Circuit Breaker (Resilience4J)
-
 O Circuit Breaker é um padrão de design usado em sistemas distribuídos, como microservices, para aumentar a resiliência e a estabilidade dos sistemas. Ele atua como um "disjuntor" em chamadas de serviços externos (APIs, bancos de dados, etc.), interrompendo temporariamente as tentativas de conexão a um serviço que está com falhas repetidas.
 
 Como funciona:
