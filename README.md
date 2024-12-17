@@ -223,10 +223,16 @@ Plataforma de streaming de eventos distribuida.
 
 Conceitos e estruturas Kafka.
 
-- Producer : envia registro (mensagens) para tópicos dentro do kafka.
-- Consumer : consome, lê e ṕrocessa mensagens de um ou outros tópicos.
-- Topics : 
+- Producer : Envia registro (mensagens) para tópicos dentro do kafka.
+- Consumer : Consome, lê e ṕrocessa mensagens de um ou outros tópicos.
+- Topics : Categorias ou canais onde os registros são armazenados. Cada tópico pode ser particionado.
+- Partitions (Partições): Subdivisões de um tópico que permitem a distribuição e paralelização dos dados. Cada partição é uma sequência ordenada e imutável de registros.
+- Broker - Server Kafka que armazenas mensagem de producers e consumers.
+- Cluster - Conjunto de recursos de TI para atender alguma necessidade especifica, no caso do kafa é um conjunto de brokers, posso ter varios brokers dentro de um mesmo cluster com foco em alta disponibilidade e escalabilidade.
 
+### Estrutura Kafka. 
+
+![estrutura_kafka](https://github.com/user-attachments/assets/d71469e9-db6e-468f-893f-6b3fbb553ac9)
 
 
 
