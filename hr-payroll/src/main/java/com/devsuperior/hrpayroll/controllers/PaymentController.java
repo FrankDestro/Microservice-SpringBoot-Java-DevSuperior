@@ -6,6 +6,7 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,10 +20,14 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+
     @GetMapping(value = "/{workerId}/days/{days}")
     @CircuitBreaker(name = "myCircuitBreaker", fallbackMethod = "getPaymentAlternative")
     public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
         Payment payment = paymentService.getPayment(workerId, days);
+        kafkaTemplate.send("payroll.generated.email", payment.getName());
         return ResponseEntity.ok().body(payment);
     }
 

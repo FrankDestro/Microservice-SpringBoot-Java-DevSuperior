@@ -1,0 +1,17 @@
+{
+	"ulid": "01J6TN4R7CHYKNX3VGRSRBGWAY",
+	"minTime": 1725295332647,
+	"maxTime": 1725300000000,
+	"stats": {
+		"numSamples": 10010,
+		"numSeries": 125,
+		"numChunks": 143
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01J6TN4R7CHYKNX3VGRSRBGWAY"
+		]
+	},
+	"version": 1
+}

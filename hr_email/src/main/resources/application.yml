@@ -1,0 +1,49 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+server:
+  port: ${PORT:0}
+spring:
+  application:
+    name: hr-email
+  output:
+     ansi:
+       enabled: ALWAYS
+  mail:
+    host: ${EMAIL_HOST:smtp.gmail.com}
+    port: ${EMAIL_PORT:587}
+    username: ${EMAIL_USERNAME:test@gmail.com}
+    password: ${EMAIL_PASSWORD:123456}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          tls:
+            true: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, info
+  endpoint:
+    refresh:
+      enabled: true
+logging:
+  file:
+    name: hr-email.log
+  level:
+    root: info
+  pattern:
+    console: '%d{yyyy-MM HH:mm} ==  %logger{40} >>> %msg%n'
+
+
+
+

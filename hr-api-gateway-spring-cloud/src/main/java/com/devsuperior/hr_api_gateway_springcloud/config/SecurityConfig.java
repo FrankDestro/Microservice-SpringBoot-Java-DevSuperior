@@ -37,7 +37,6 @@ public class SecurityConfig {
                         .jwtAuthenticationConverter(jwtAuthenticationConverter())
                         )
                 );
-
         return http.build();
     }
 
@@ -57,9 +56,6 @@ public class SecurityConfig {
     public static class CustomJwtGrantedAuthoritiesConverter implements Converter<Jwt, Collection<GrantedAuthority>> {
         @Override
         public Collection<GrantedAuthority> convert(Jwt jwt) {
-            // Print the JWT claims to the console
-            System.out.println("JWT Claims: " + jwt.getClaims());
-
             Collection<String> authorities = jwt.getClaimAsStringList("authorities");
             return authorities.stream()
                     .map(SimpleGrantedAuthority::new)

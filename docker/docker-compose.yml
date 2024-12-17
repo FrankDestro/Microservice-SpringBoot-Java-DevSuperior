@@ -26,6 +26,8 @@ services:
       - '--web.enable-lifecycle'
     user: root
     restart: unless-stopped
+    profiles:
+      - observability
 
   redis:
     image: redis:latest
@@ -33,6 +35,29 @@ services:
     ports:
       - "6379:6379"
     restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    profiles:
+      - database
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+
+  redisInsight:
+    image: redis/redisinsight:latest
+    container_name: redis-insight
+    ports:
+      - "5540:5540"
+    restart: unless-stopped
+    depends_on:
+      - redis
+    volumes:
+      - redisinsight-data:/db
+    profiles:
+      - database
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
 
   grafana:
     image: grafana/grafana:latest
@@ -49,10 +74,70 @@ services:
     restart: unless-stopped
     depends_on:
       - prometheus-hr-microservice
+    profiles:
+      - observability
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"  # Porta do Zookeeper
+    profiles:
+      - message
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_LISTENER_NAME_INSIDE: INSIDE
+      KAFKA_LISTENER_SECURITY_PROTOCOL: PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENER: OUTSIDE://localhost:9092
+      KAFKA_LISTENER_PORT: 9092
+      KAFKA_LISTENER_NAME_OUTSIDE: OUTSIDE
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    depends_on:
+      - zookeeper
+    profiles:
+      - message
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    environment:
+      KAFKA_CLUSTERS_0_NAME: "Local Kafka"
+      KAFKA_CLUSTERS_0_BOOTSTRAP_SERVERS: "kafka:9093"
+      KAFKA_CLUSTERS_0_ZOOKEEPER: "zookeeper:2181"
+    ports:
+      - "8080:8080"
+    profiles:
+      - message
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
 
 volumes:
   grafana-storage:
-
+  redis-data:
+    driver: local
+  redisinsight-data:
+    driver: local
 
 
 

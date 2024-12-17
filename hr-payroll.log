@@ -1,66 +1,384 @@
-2024-07-23T15:14:35.410-03:00  INFO 7676 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-07-23T15:14:36.329-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1bd0e50f-d1bd-33c7-a718-206301c101f4
-2024-07-23T15:14:36.560-03:00  WARN 7676 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-07-23T15:14:36.565-03:00  WARN 7676 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-07-23T15:14:36.570-03:00  WARN 7676 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
-2024-07-23T15:14:36.574-03:00  WARN 7676 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-07-23T15:14:36.576-03:00  WARN 7676 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
-2024-07-23T15:14:37.013-03:00  INFO 7676 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2024-07-23T15:14:37.036-03:00  INFO 7676 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-07-23T15:14:37.037-03:00  INFO 7676 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-07-23T15:14:37.110-03:00  INFO 7676 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-07-23T15:14:37.111-03:00  INFO 7676 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1679 ms
-2024-07-23T15:14:38.891-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2024-07-23T15:14:38.924-03:00  INFO 7676 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
-2024-07-23T15:14:41.367-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2024-07-23T15:14:42.697-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2024-07-23T15:14:42.718-03:00  INFO 7676 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2024-07-23T15:14:42.766-03:00  WARN 7676 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2024-07-23T15:14:42.785-03:00  INFO 7676 --- [hr-payroll] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
-2024-07-23T15:14:42.841-03:00  INFO 7676 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42331 (http) with context path '/'
-2024-07-23T15:14:42.842-03:00  INFO 7676 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 42331
-2024-07-23T15:14:42.846-03:00  INFO 7676 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2024-07-23T15:14:42.944-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2024-07-23T15:14:42.948-03:00  INFO 7676 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:14:42.969-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2024-07-23T15:14:42.969-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2024-07-23T15:14:42.969-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2024-07-23T15:14:42.970-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2024-07-23T15:14:42.970-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2024-07-23T15:14:42.970-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2024-07-23T15:14:42.970-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2024-07-23T15:14:43.420-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2024-07-23T15:14:43.423-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2024-07-23T15:14:43.426-03:00  INFO 7676 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2024-07-23T15:14:43.432-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1721758483431 with initial instances count: 4
-2024-07-23T15:14:43.443-03:00  INFO 7676 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
-2024-07-23T15:14:43.444-03:00  INFO 7676 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721758483444, current=UP, previous=STARTING]
-2024-07-23T15:14:43.445-03:00  INFO 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e: registering service...
-2024-07-23T15:14:43.487-03:00  INFO 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e - registration status: 204
-2024-07-23T15:14:44.448-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2024-07-23T15:14:45.450-03:00  INFO 7676 --- [hr-payroll] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2024-07-23T15:14:45.470-03:00  INFO 7676 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 12.721 seconds (process running for 13.019)
-2024-07-23T15:19:06.549-03:00  INFO 7676 --- [hr-payroll] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-07-23T15:19:06.550-03:00  INFO 7676 --- [hr-payroll] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-07-23T15:19:06.552-03:00  INFO 7676 --- [hr-payroll] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-07-23T15:19:42.972-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:24:42.974-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:29:42.975-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:34:42.976-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:39:42.977-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:44:42.978-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:49:42.979-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:54:42.980-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T15:59:42.981-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:04:42.982-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:09:42.983-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:14:42.984-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:19:42.984-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:24:42.985-03:00  INFO 7676 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2024-07-23T16:24:47.673-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
-2024-07-23T16:24:47.674-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1721762687674, current=DOWN, previous=UP]
-2024-07-23T16:24:47.685-03:00  INFO 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e: registering service...
-2024-07-23T16:24:47.740-03:00  INFO 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-12-17T09:44:10.064-03:00  INFO 11002 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-12-17T09:44:12.533-03:00  INFO 11002 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7a441481-8fa0-3a53-8103-16f822e197a3
+2024-12-17T09:44:13.024-03:00  WARN 11002 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-17T09:44:13.036-03:00  WARN 11002 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T09:44:13.051-03:00  WARN 11002 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-17T09:44:13.060-03:00  WARN 11002 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T09:44:13.066-03:00  WARN 11002 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T09:44:13.689-03:00  INFO 11002 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-12-17T09:44:13.710-03:00  INFO 11002 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-17T09:44:13.711-03:00  INFO 11002 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-12-17T09:44:13.851-03:00  INFO 11002 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-17T09:44:13.852-03:00  INFO 11002 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3727 ms
+2024-12-17T09:44:14.967-03:00  INFO 11002 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
+2024-12-17T09:44:17.835-03:00  INFO 11002 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-12-17T09:44:17.967-03:00  WARN 11002 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-17T09:44:18.014-03:00  INFO 11002 --- [hr-payroll] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2024-12-17T09:44:18.141-03:00  INFO 11002 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 35505 (http) with context path '/'
+2024-12-17T09:44:18.143-03:00  INFO 11002 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 35505
+2024-12-17T09:44:18.151-03:00  INFO 11002 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-12-17T09:44:18.374-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-12-17T09:44:18.383-03:00  INFO 11002 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T09:44:18.422-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-12-17T09:44:18.423-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-12-17T09:44:19.108-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-12-17T09:44:19.113-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-12-17T09:44:19.118-03:00  INFO 11002 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-17T09:44:19.128-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1734439459126 with initial instances count: 1
+2024-12-17T09:44:19.142-03:00  INFO 11002 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
+2024-12-17T09:44:19.144-03:00  INFO 11002 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1734439459144, current=UP, previous=STARTING]
+2024-12-17T09:44:19.146-03:00  INFO 11002 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:70ba9373a64ff2143976debafb2b8732: registering service...
+2024-12-17T09:44:19.194-03:00  INFO 11002 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 11.117 seconds (process running for 11.798)
+2024-12-17T09:44:19.228-03:00  INFO 11002 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:70ba9373a64ff2143976debafb2b8732 - registration status: 204
+2024-12-17T09:44:19.276-03:00  INFO 11002 --- [hr-payroll] [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = hr-payroll-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-12-17T09:44:19.432-03:00  INFO 11002 --- [hr-payroll] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-12-17T09:44:19.477-03:00  INFO 11002 --- [hr-payroll] [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=hr-payroll-producer-1] Instantiated an idempotent producer.
+2024-12-17T09:44:19.577-03:00  INFO 11002 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-12-17T09:44:19.578-03:00  INFO 11002 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-12-17T09:44:19.578-03:00  INFO 11002 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1734439459574
+2024-12-17T09:44:20.012-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=hr-payroll-producer-1] Cluster ID: yBV_fiX-Rai0e7PWhlO-sg
+2024-12-17T09:44:20.136-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=hr-payroll-producer-1] ProducerId set to 1000 with epoch 0
+2024-12-17T09:49:18.426-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T09:53:20.241-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node -1 disconnected.
+2024-12-17T09:54:18.426-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T09:59:18.427-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:03:20.299-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node -1 disconnected.
+2024-12-17T10:04:18.432-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:09:18.432-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:14:18.433-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:19:18.433-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:24:18.434-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:29:18.435-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:34:18.435-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:39:18.436-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:44:18.436-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:49:18.437-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:54:18.438-03:00  INFO 11002 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:57:05.580-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:05.633-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:05.634-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 36 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:05.769-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:05.769-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 37 due to node 1001 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2024-12-17T10:57:06.043-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:06.044-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 38 due to node 1001 being disconnected (elapsed time since creation: 0ms, elapsed time since send: 0ms, request timeout: 30000ms)
+2024-12-17T10:57:06.509-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:06.510-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:07.447-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:07.447-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:08.455-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:08.455-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:09.456-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:09.456-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:10.457-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:10.457-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:11.459-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:11.459-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:12.460-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:12.460-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:13.461-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:13.461-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:14.462-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:14.463-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:15.465-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:15.466-03:00  WARN 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Connection to node 1001 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2024-12-17T10:57:16.470-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:16.470-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 39 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:17.499-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:17.499-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 40 due to node 1001 being disconnected (elapsed time since creation: 9ms, elapsed time since send: 9ms, request timeout: 30000ms)
+2024-12-17T10:57:18.506-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:18.508-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 41 due to node 1001 being disconnected (elapsed time since creation: 2ms, elapsed time since send: 2ms, request timeout: 30000ms)
+2024-12-17T10:57:19.511-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:19.511-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 42 due to node 1001 being disconnected (elapsed time since creation: 2ms, elapsed time since send: 2ms, request timeout: 30000ms)
+2024-12-17T10:57:20.514-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:20.514-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 43 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:21.516-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:21.516-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 44 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:22.519-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:22.521-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 45 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:23.522-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:23.523-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 46 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:24.527-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:24.528-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 47 due to node 1001 being disconnected (elapsed time since creation: 2ms, elapsed time since send: 2ms, request timeout: 30000ms)
+2024-12-17T10:57:25.554-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:25.555-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 48 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:26.558-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:26.558-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 49 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:27.561-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:27.561-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 50 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:28.581-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:28.581-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 51 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:29.584-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:29.585-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 52 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:30.589-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:30.592-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 53 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:31.596-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:31.597-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 54 due to node 1001 being disconnected (elapsed time since creation: 4ms, elapsed time since send: 4ms, request timeout: 30000ms)
+2024-12-17T10:57:32.561-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node 1001 disconnected.
+2024-12-17T10:57:32.563-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Cancelled in-flight API_VERSIONS request with correlation id 55 due to node 1001 being disconnected (elapsed time since creation: 1ms, elapsed time since send: 1ms, request timeout: 30000ms)
+2024-12-17T10:57:33.596-03:00  INFO 11002 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=hr-payroll-producer-1] Cluster ID: GWhiIPSjQ52lDBWuTxbLSw
+2024-12-17T10:58:59.019-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
+2024-12-17T10:58:59.019-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1734443939019, current=DOWN, previous=UP]
+2024-12-17T10:58:59.020-03:00  INFO 11002 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:70ba9373a64ff2143976debafb2b8732: registering service...
+2024-12-17T10:58:59.043-03:00  INFO 11002 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:70ba9373a64ff2143976debafb2b8732 - registration status: 204
+2024-12-17T10:58:59.067-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=hr-payroll-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-12-17T10:58:59.082-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-17T10:58:59.082-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-17T10:58:59.082-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-17T10:58:59.082-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-17T10:58:59.083-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for hr-payroll-producer-1 unregistered
+2024-12-17T10:58:59.106-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-12-17T10:59:02.108-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-12-17T10:59:02.115-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:70ba9373a64ff2143976debafb2b8732 - deregister  status: 200
+2024-12-17T10:59:02.119-03:00  INFO 11002 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-12-17T10:59:06.733-03:00  INFO 89392 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-12-17T10:59:09.411-03:00  INFO 89392 --- [hr-payroll] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7a441481-8fa0-3a53-8103-16f822e197a3
+2024-12-17T10:59:09.922-03:00  WARN 89392 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-17T10:59:09.932-03:00  WARN 89392 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T10:59:09.945-03:00  WARN 89392 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-12-17T10:59:09.954-03:00  WARN 89392 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T10:59:09.962-03:00  WARN 89392 --- [hr-payroll] [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-12-17T10:59:10.530-03:00  INFO 89392 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2024-12-17T10:59:10.571-03:00  INFO 89392 --- [hr-payroll] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-17T10:59:10.571-03:00  INFO 89392 --- [hr-payroll] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-12-17T10:59:10.718-03:00  INFO 89392 --- [hr-payroll] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-17T10:59:10.720-03:00  INFO 89392 --- [hr-payroll] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3928 ms
+2024-12-17T10:59:11.796-03:00  INFO 89392 --- [hr-payroll] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'hr-worker' URL not provided. Will try picking an instance via load-balancing.
+2024-12-17T10:59:14.727-03:00  INFO 89392 --- [hr-payroll] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2024-12-17T10:59:14.859-03:00  WARN 89392 --- [hr-payroll] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2024-12-17T10:59:14.917-03:00  INFO 89392 --- [hr-payroll] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2024-12-17T10:59:15.053-03:00  INFO 89392 --- [hr-payroll] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 33283 (http) with context path '/'
+2024-12-17T10:59:15.057-03:00  INFO 89392 --- [hr-payroll] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 33283
+2024-12-17T10:59:15.067-03:00  INFO 89392 --- [hr-payroll] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2024-12-17T10:59:15.320-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2024-12-17T10:59:15.348-03:00  INFO 89392 --- [hr-payroll] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T10:59:15.400-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2024-12-17T10:59:15.401-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2024-12-17T10:59:16.131-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2024-12-17T10:59:16.137-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2024-12-17T10:59:16.143-03:00  INFO 89392 --- [hr-payroll] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2024-12-17T10:59:16.174-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1734443956172 with initial instances count: 6
+2024-12-17T10:59:16.199-03:00  INFO 89392 --- [hr-payroll] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application HR-PAYROLL with eureka with status UP
+2024-12-17T10:59:16.201-03:00  INFO 89392 --- [hr-payroll] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1734443956201, current=UP, previous=STARTING]
+2024-12-17T10:59:16.205-03:00  INFO 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d: registering service...
+2024-12-17T10:59:16.254-03:00  INFO 89392 --- [hr-payroll] [main] c.d.hrpayroll.HrPayrollApplication       : Started HrPayrollApplication in 12.611 seconds (process running for 13.414)
+2024-12-17T10:59:16.282-03:00  INFO 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d - registration status: 204
+2024-12-17T10:59:16.358-03:00  INFO 89392 --- [hr-payroll] [main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = hr-payroll-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-12-17T10:59:16.472-03:00  INFO 89392 --- [hr-payroll] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-12-17T10:59:16.505-03:00  INFO 89392 --- [hr-payroll] [main] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=hr-payroll-producer-1] Instantiated an idempotent producer.
+2024-12-17T10:59:16.627-03:00  INFO 89392 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.7.0
+2024-12-17T10:59:16.627-03:00  INFO 89392 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 2ae524ed625438c5
+2024-12-17T10:59:16.628-03:00  INFO 89392 --- [hr-payroll] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1734443956623
+2024-12-17T10:59:17.185-03:00  INFO 89392 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=hr-payroll-producer-1] Cluster ID: GWhiIPSjQ52lDBWuTxbLSw
+2024-12-17T10:59:17.303-03:00  INFO 89392 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=hr-payroll-producer-1] ProducerId set to 0 with epoch 0
+2024-12-17T11:01:14.665-03:00  INFO 89392 --- [hr-payroll] [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-17T11:01:14.665-03:00  INFO 89392 --- [hr-payroll] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-17T11:01:14.666-03:00  INFO 89392 --- [hr-payroll] [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-17T11:04:15.405-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:08:17.418-03:00  INFO 89392 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node -1 disconnected.
+2024-12-17T11:09:15.405-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:14:15.406-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:18:17.451-03:00  INFO 89392 --- [hr-payroll] [kafka-producer-network-thread | hr-payroll-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=hr-payroll-producer-1] Node -1 disconnected.
+2024-12-17T11:19:15.406-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:24:15.407-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:29:15.407-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:34:15.408-03:00  INFO 89392 --- [hr-payroll] [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2024-12-17T11:35:12.311-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application HR-PAYROLL with eureka with status DOWN
+2024-12-17T11:35:12.312-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1734446112312, current=DOWN, previous=UP]
+2024-12-17T11:35:12.316-03:00  INFO 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d: registering service...
+2024-12-17T11:35:12.347-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=hr-payroll-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-12-17T11:35:12.379-03:00  INFO 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/} exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
@@ -83,23 +401,16 @@
 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
-Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:752)
-	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
-	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
-	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
-	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:189)
-	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:450)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
-	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
-	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.hc.core5.http.NoHttpResponseException: localhost:8761 failed to respond
+	at org.apache.hc.core5.http.impl.io.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:301)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:175)
+	at org.apache.hc.core5.http.impl.io.HttpRequestExecutor.execute(HttpRequestExecutor.java:218)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$InternalConnectionEndpoint.execute(PoolingHttpClientConnectionManager.java:717)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.execute(InternalExecRuntime.java:216)
+	at org.apache.hc.client5.http.impl.classic.MainClientExec.execute(MainClientExec.java:116)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:188)
 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
@@ -125,9 +436,12 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
 	... 21 more
 
-2024-07-23T16:24:47.740-03:00  WARN 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-07-23T16:24:47.774-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2024-07-23T16:24:47.798-03:00  INFO 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-12-17T11:35:12.384-03:00  WARN 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": localhost:8761 failed to respond
+2024-12-17T11:35:12.429-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-17T11:35:12.431-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-17T11:35:12.440-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-12-17T11:35:12.441-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-17T11:35:12.434-03:00  INFO 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
@@ -151,14 +465,14 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:752)
+	at java.base/java.net.Socket.connect(Socket.java:757)
 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
@@ -193,8 +507,9 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
 	... 22 more
 
-2024-07-23T16:24:47.798-03:00  WARN 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-07-23T16:24:47.798-03:00  WARN 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e - registration failed Cannot execute request on any known server
+2024-12-17T11:35:12.442-03:00  WARN 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://localhost:8761/eureka/apps/HR-PAYROLL": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-12-17T11:35:12.452-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for hr-payroll-producer-1 unregistered
+2024-12-17T11:35:12.442-03:00  WARN 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d - registration failed Cannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
@@ -210,9 +525,9 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2024-07-23T16:24:47.813-03:00  WARN 7676 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+2024-12-17T11:35:12.472-03:00  WARN 89392 --- [hr-payroll] [DiscoveryClient-InstanceInfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
@@ -228,10 +543,11 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2024-07-23T16:24:47.819-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2024-07-23T16:24:47.841-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-12-17T11:35:12.505-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2024-12-17T11:35:15.510-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2024-12-17T11:35:15.514-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://localhost:8761/eureka/}, exception=I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
@@ -271,14 +587,14 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145)
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
-	at java.base/java.lang.Thread.run(Thread.java:1570)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
-	at java.base/java.net.Socket.connect(Socket.java:752)
+	at java.base/java.net.Socket.connect(Socket.java:757)
 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
@@ -313,8 +629,8 @@ Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http:
 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
 	... 38 more
 
-2024-07-23T16:24:47.841-03:00  WARN 7676 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
-2024-07-23T16:24:47.841-03:00 ERROR 7676 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:8867ba86a18fc94ce1ceff149813605e - de-registration failedCannot execute request on any known server
+2024-12-17T11:35:15.515-03:00  WARN 89392 --- [hr-payroll] [SpringApplicationShutdownHook] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on DELETE request for "http://localhost:8761/eureka/apps/HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d": Connect to http://localhost:8761 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Conexão recusada
+2024-12-17T11:35:15.515-03:00 ERROR 89392 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_HR-PAYROLL/hr-payroll:52d97d2e2004d52c426c220eae7ff18d - de-registration failedCannot execute request on any known server
 
 com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar:2.0.2]
@@ -346,6 +662,6 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:145) ~[spring-boot-3.3.0.jar:3.3.0]
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114) ~[spring-boot-3.3.0.jar:3.3.0]
-	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2024-07-23T16:24:47.849-03:00  INFO 7676 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2024-12-17T11:35:15.518-03:00  INFO 89392 --- [hr-payroll] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
