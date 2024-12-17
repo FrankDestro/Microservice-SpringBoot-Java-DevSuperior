@@ -44,14 +44,6 @@
 * grafana- localhost:3000
 
 
-
-
-
-
-
-
-
-
 ### Leitura. 
 
 ### Microservices - a definition of this new architectural term. 
@@ -93,9 +85,121 @@ Em resumo, o Eureka Server fornece um registro centralizado de todos os serviço
 
 ## CircuitBreaker by resiliense4j. 
 
+## Circuit Breaker (Resilience4J)
 
-## Spring cloud Gateway
+O Circuit Breaker é um padrão de design usado em sistemas distribuídos, como microservices, para aumentar a resiliência e a estabilidade dos sistemas. Ele atua como um "disjuntor" em chamadas de serviços externos (APIs, bancos de dados, etc.), interrompendo temporariamente as tentativas de conexão a um serviço que está com falhas repetidas.
 
+Como funciona:
+Closed (Fechado): No estado inicial, o circuito está "fechado", ou seja, as chamadas de serviço ocorrem normalmente. Se as chamadas falham repetidamente, o Circuit Breaker muda para o estado "Open".
+
+Open (Aberto): No estado "aberto", as chamadas são bloqueadas imediatamente, sem tentar acessar o serviço problemático. Esse estado permanece por um tempo configurado (timeout), após o qual o Circuit Breaker muda para o estado "Half-Open".
+
+Half-Open (Meio-Aberto): Neste estado, o Circuit Breaker permite que algumas chamadas passem para testar se o serviço voltou a funcionar. Se essas chamadas forem bem-sucedidas, o Circuit Breaker volta ao estado "Closed". Se falharem, retorna ao estado "Open".
+
+![image](https://github.com/user-attachments/assets/ddf978dd-91d0-486a-8dc5-5f982cc65569)
+
+references : https://digitalvarys.com/what-is-circuit-breaker-design-pattern/ 
+              https://resilience4j.readme.io/docs/circuitbreaker
+
+### Circuit Breaker - @Retry
+
+A anotação @Retry é usada para definir uma política de tentativa automática quando um método falha devido a uma exceção.
+Basicamente, ela permite que o método seja reexecutado um número específico de vezes antes de falhar definitivamente. Se todas as tentativas falharem, um método de fallback pode ser chamado.
+
+```java
+@GetMapping("/foo-bar")
+    @Retry(name = "foo-bar")
+    public String fooBar() {
+       looger.info("Request to foo-bar is received!");
+       var response =  new RestTemplate().getForEntity("http://localhost:8080/foo-bar", String.class);
+       return response.getBody();
+    }
+```
+
+application.yml
+
+```yml
+resilience4j:
+  retry:
+    instances:
+      foo-bar:
+        maxAttempts: 5
+      default:
+        maxAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+```
+### Circuit Breaker - FallbackMethod 
+
+Defini um método alternativo caso a falha venha a ocorrer. Deve-ser adicionar uma exception como argumento no fallbackMethod
+
+```java
+ @GetMapping("/foo-bar")
+    @Retry(name = "foo-bar", fallbackMethod = "fallbackMethod")
+    public String fooBar() {
+       looger.info("Request to foo-bar is received!");
+       var response =  new RestTemplate().getForEntity("http://localhost:8080/foo-bar", String.class);
+       return response.getBody();
+    }
+
+    public String fallbackMethod(Exception e) {
+        return "fallbackMethod foo-bar!!!";
+    }
+```
+
+### CircuitBreaker - @CircuitBreaker
+
+A anotação @CircuitBreaker implementa o padrão de design "Circuit Breaker". Um Circuit Breaker monitora as falhas em um método e pode abrir o circuito para impedir chamadas subsequentes ao método quando muitas falhas ocorrem em um curto período de tempo. Enquanto o circuito está aberto, as chamadas ao método falham automaticamente, e um método de fallback pode ser chamado. Depois de um tempo, o circuito pode ser fechado novamente, permitindo que novas chamadas ao método sejam feitas.
+
+```java
+    @GetMapping("/foo-bar")
+    @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
+    public String fooBar() {
+       looger.info("Request to foo-bar is received!");
+       var response =  new RestTemplate().getForEntity("http://localhost:8080/foo-bar", String.class);
+       return response.getBody();
+    }
+
+    public String fallbackMethod(Exception e) {
+        return "fallbackMethod foo-bar!!!";
+    }
+}
+
+```
+
+### Diferenças Principais: @Retry / @CircuitBreaker
+* @Retry: Foca em reexecutar o método várias vezes antes de considerar que ele falhou definitivamente.
+
+* @CircuitBreaker: Monitora falhas para abrir o circuito após muitas falhas seguidas, evitando novas chamadas ao método até que ele "feche" novamente.
+Ambas as anotações podem ser usadas juntas, dependendo do cenário. Por exemplo, você pode querer várias tentativas (@Retry) antes de o circuito abrir (@CircuitBreaker).
+
+### CircuitBreaker - @RateLimiter
+
+O RateLimiter é usado para limitar o número de chamadas que podem ser feitas a um serviço em um determinado período de tempo, protegendo contra sobrecargas e garantindo que o serviço não seja bombardeado com requisições.
+Isso é útil quando se quer controlar o fluxo de requisições para evitar atingir limites de API ou proteger recursos internos.
+
+```ruby
+    @GetMapping("/foo-bar")
+    @RateLimiter(name = "foo-bar-rate")
+    public String fooBar() {
+       looger.info("Request to foo-bar is received!");
+        return "Foo-Bar!!!";
+    }
+```
+
+### CircuitBreaker - @Bulkhead
+
+O Bulkhead permite que você limite o número de chamadas simultâneas a um serviço, criando "compartimentos" que isolam falhas e impedem que um subsistema sobrecarregado afete todo o sistema.
+É especialmente útil em microserviços onde você deseja evitar que um serviço monopolize todos os recursos.
+
+```ruby
+    @GetMapping("/foo-bar")
+    @Bulkhead(name = "foo-bar-bk")
+    public String fooBar() {
+       looger.info("Request to foo-bar is received!");
+        return "Foo-Bar!!!";
+    }
+```
 
 ## Servidor de configuração centralizada. 
 
