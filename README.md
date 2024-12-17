@@ -10,6 +10,7 @@
 *  sfj4j - Log 
 *  Spring Cloug Gateway 4.1.2
 *  Observability (Prometheus / Grafana)
+*  Kafka (Message Broken)
 
 ## Fases para implementação 
 * 1- Criação dos microserviços e integração através do OpenFeign.
@@ -209,5 +210,8 @@ https://github.com/FrankDestro/microservices-config
 ## Autenticação e Autorização 
 
 ![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/d578932f-63e8-4f79-bbb9-91b50bbf5122)
+
+
+## kafka Message Broken
 
 
