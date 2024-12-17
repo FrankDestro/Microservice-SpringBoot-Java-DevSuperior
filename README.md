@@ -212,6 +212,6 @@ https://github.com/FrankDestro/microservices-config
 ![image](https://github.com/FrankDestro/Microservice-SpringBoot-Java/assets/93776452/d578932f-63e8-4f79-bbb9-91b50bbf5122)
 
 
-## kafka Message Broken
+## kafka Message Broken  cfdff
 
 
