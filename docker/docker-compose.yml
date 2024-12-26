@@ -9,6 +9,9 @@ networks:
     driver: bridge
 
 services:
+  # ====================================================================================================================
+  # PROMETHEUS
+  # ====================================================================================================================
   prometheus-hr-microservice:
     image: prom/prometheus:latest
     container_name: prometheus-hr-microservice
@@ -16,8 +19,7 @@ services:
       - hr-microservice_observability_network
       - hr-microservice_app_network
     volumes:
-      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./data/prometheus:/prometheus
+      - "./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:z"
     ports:
       - "9091:9090"
     command:
@@ -28,7 +30,9 @@ services:
     restart: unless-stopped
     profiles:
       - observability
-
+  # ====================================================================================================================
+  # REDIS
+  # ====================================================================================================================
   redis:
     image: redis:latest
     container_name: redis-cache
@@ -42,7 +46,9 @@ services:
     networks:
       - hr-microservice_observability_network
       - hr-microservice_app_network
-
+  # ====================================================================================================================
+  # REDISINSIGHT
+  # ====================================================================================================================
   redisInsight:
     image: redis/redisinsight:latest
     container_name: redis-insight
@@ -58,7 +64,9 @@ services:
     networks:
       - hr-microservice_observability_network
       - hr-microservice_app_network
-
+  # ====================================================================================================================
+  # GRAFANA
+  # ====================================================================================================================
   grafana:
     image: grafana/grafana:latest
     container_name: grafana-hr-microservice
@@ -76,7 +84,9 @@ services:
       - prometheus-hr-microservice
     profiles:
       - observability
-
+  # ====================================================================================================================
+  # ZOOKEEPER
+  # ====================================================================================================================
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
@@ -90,7 +100,9 @@ services:
     networks:
       - hr-microservice_observability_network
       - hr-microservice_app_network
-
+  # ====================================================================================================================
+  # KAFKA
+  # ====================================================================================================================
   kafka:
     image: confluentinc/cp-kafka:latest
     container_name: kafka
@@ -117,6 +129,9 @@ services:
       - hr-microservice_observability_network
       - hr-microservice_app_network
 
+  # ====================================================================================================================
+  # KAFKA-UI
+  # ====================================================================================================================
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
@@ -131,6 +146,72 @@ services:
     networks:
       - hr-microservice_observability_network
       - hr-microservice_app_network
+
+  # ====================================================================================================================
+  # Worker-DB
+  # ====================================================================================================================
+  worker-db:
+    image: mysql:8.0
+    container_name: worker-db
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: 1234567
+      MYSQL_USER: docker
+      MYSQL_PASSWORD : 1234567
+      MYSQL_DATABASE: worker_service_db
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_TCP_PORT : 3308
+    ports:
+      - "3308:3308"
+    expose:
+      - "3308"
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+    profiles:
+      - database-mysql
+    restart: unless-stopped
+  # ====================================================================================================================
+  # User-DB
+  # ====================================================================================================================
+  user-db:
+    image: mysql:8.0
+    container_name: user-db
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: 1234567
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: 1234567
+      MYSQL_DATABASE: user_service_db
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_TCP_PORT: 3309
+    ports:
+      - "3309:3309"
+    expose:
+      - "3309"
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+    profiles:
+      - database-mysql-user
+    restart: unless-stopped
+
+  # ====================================================================================================================
+  # ZIPKIN
+  # ====================================================================================================================
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411" # Porta padrão para acesso ao Zipkin
+    environment:
+      - STORAGE_TYPE=mem # Configuração do armazenamento (padrão em memória)
+    networks:
+      - hr-microservice_observability_network
+      - hr-microservice_app_network
+    profiles:
+      - datatrace
+    restart: unless-stopped
 
 volumes:
   grafana-storage:

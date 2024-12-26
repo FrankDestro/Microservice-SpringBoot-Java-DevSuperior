@@ -9,8 +9,8 @@ import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 
 @EnableDiscoveryClient
 @EnableFeignClients
-@SpringBootApplication
 @ImportAutoConfiguration({FeignAutoConfiguration.class})
+@SpringBootApplication(scanBasePackages = "com.devsuperior.hrpayroll")
 public class HrPayrollApplication {
 
 	public static void main(String[] args) {

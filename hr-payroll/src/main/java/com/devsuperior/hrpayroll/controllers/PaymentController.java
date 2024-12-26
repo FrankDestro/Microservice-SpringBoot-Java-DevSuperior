@@ -21,13 +21,13 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Payment> kafkaTemplate;
 
     @GetMapping(value = "/{workerId}/days/{days}")
     @CircuitBreaker(name = "myCircuitBreaker", fallbackMethod = "getPaymentAlternative")
     public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
         Payment payment = paymentService.getPayment(workerId, days);
-        kafkaTemplate.send("payroll.generated.email", payment.getName());
+        kafkaTemplate.send("payroll.generated.email", payment);
         return ResponseEntity.ok().body(payment);
     }
 

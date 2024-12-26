@@ -19,27 +19,31 @@ spring:
     output:
         ansi:
             enabled: ALWAYS
-#    kafka:
-#        bootstrap-servers: localhost:9092
-#        producer:
-#            key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    kafka:
+        producer:
+          bootstrap-servers:
+            - localhost:9092
+          key-serializer: org.apache.kafka.common.serialization.StringSerializer
+          value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+logging:
+    pattern:
+        level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 management:
     endpoints:
         web:
             exposure:
-                include: refresh, health, info
+                include: refresh, health, info, prometheus
     endpoint:
         refresh:
             enabled: true
-logging:
-    file:
-        name: hr-payroll.log
-    level:
-        root: info
-    pattern:
-        console: '%d{yyyy-MM HH:mm} ==  %logger{40} >>> %msg%n'
-logstash:
-    host: localhost
-    port: 5000
+    zipkin:
+        tracing:
+            endpoint: http://localhost:9411/api/v2/spans
+    tracing:
+        enabled: true
+        sampling:
+            probability: 1.0
+
+

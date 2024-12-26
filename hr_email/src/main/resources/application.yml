@@ -27,12 +27,17 @@ spring:
             required: true
           tls:
             true: true
+  sendgrid:
+    api-key: ${SENDGRID_API_KEY}
+
+  template:
+     id: ${TEMPLATE_ID}
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, info
+        include: refresh, health, info, prometheus
   endpoint:
     refresh:
       enabled: true
@@ -43,6 +48,7 @@ logging:
     root: info
   pattern:
     console: '%d{yyyy-MM HH:mm} ==  %logger{40} >>> %msg%n'
+
 
 
 
